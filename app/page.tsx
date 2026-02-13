@@ -44,7 +44,7 @@ import {
   MdOutlineMedicalServices,
   MdOutlineChildCare,
 } from "react-icons/md";
-import { GiHealing, GiScales, GiSkullSignet, GiMedicines, GiHerbs, GiHealthNormal, GiYinYang } from "react-icons/gi";
+import { GiHealing, GiScales, GiSkullSignet, GiMedicines,  GiHealthNormal, GiYinYang } from "react-icons/gi";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 

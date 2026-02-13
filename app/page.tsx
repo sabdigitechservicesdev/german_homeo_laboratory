@@ -29,15 +29,8 @@ import {
   FaWhatsapp,
   FaVenusMars,
   FaMale,
-  FaGenderless,
-  FaRupeeSign,
   FaClinicMedical,
-  FaHospital,
-  FaAmbulance,
   FaBookMedical,
-  FaFlask,
-  FaMicroscope,
-  FaVial,
   FaNotesMedical,
   FaUserNurse,
   FaStarOfLife,
@@ -48,15 +41,10 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import {
   MdOutlineHealthAndSafety,
   MdOutlineLocalHospital,
-  MdScience,
-  MdOutlineVaccines,
   MdOutlineMedicalServices,
-  MdOutlineEmojiPeople,
-  MdOutlineFamilyRestroom,
-  MdOutlineelderly,
   MdOutlineChildCare,
 } from "react-icons/md";
-import { GiHealing, GiKidneys, GiSpineArrow, GiScales, GiSexualSigns, GiSkullSignet, GiSextant, GiMedicines, GiHerbs, GiHealthNormal, GiMeditation, GiYinYang } from "react-icons/gi";
+import { GiHealing, GiScales, GiSkullSignet, GiMedicines, GiHerbs, GiHealthNormal, GiYinYang } from "react-icons/gi";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 
@@ -83,7 +71,6 @@ export default function Home() {
   const testimonialsRef = useRef(null);
   const contactRef = useRef(null);
   const philosophyRef = useRef(null);
-  const teamRef = useRef(null);
   const achievementsRef = useRef(null);
   const processRef = useRef(null);
   const faqRef = useRef(null);
@@ -95,7 +82,6 @@ export default function Home() {
   const galleryInView = useInView(galleryRef, { once: true, amount: 0.1 });
   const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.3 });
   const philosophyInView = useInView(philosophyRef, { once: true, amount: 0.3 });
-  const teamInView = useInView(teamRef, { once: true, amount: 0.1 });
   const achievementsInView = useInView(achievementsRef, { once: true, amount: 0.3 });
   const processInView = useInView(processRef, { once: true, amount: 0.3 });
   const faqInView = useInView(faqRef, { once: true, amount: 0.1 });
@@ -200,7 +186,6 @@ export default function Home() {
       text: "Dr. Patra treated my uterine fibroid without surgery. After 6 months of treatment, the fibroid size reduced significantly. Very grateful!",
       rating: 5,
       treatment: "Uterine Fibroid",
-      image: "/img/patient1.png",
       date: "March 2026",
     },
     {
@@ -209,7 +194,6 @@ export default function Home() {
       text: "Best homeopathy doctor in Howrah. My father's paralysis condition improved remarkably. Professional and caring approach.",
       rating: 5,
       treatment: "Paralysis",
-      image: "/img/patient2.png",
       date: "February 2026",
     },
     {
@@ -218,7 +202,6 @@ export default function Home() {
       text: "I was suffering from premature ejaculation for 5 years. Dr. Patra's treatment was gentle and effective. Now I'm completely satisfied with the results.",
       rating: 5,
       treatment: "Sexual Disorder",
-      image: "/img/patient3.png",
       date: "January 2026",
     },
     {
@@ -227,7 +210,6 @@ export default function Home() {
       text: "I was suffering from severe hair loss. Dr. Patra's treatment was gentle and effective. My hair is healthier now.",
       rating: 5,
       treatment: "Hair Loss",
-      image: "/img/patient4.png",
       date: "December 2025",
     },
     {
@@ -236,7 +218,6 @@ export default function Home() {
       text: "After years of suffering from arthritis, I finally found relief with Dr. Patra's treatment. Highly recommended!",
       rating: 5,
       treatment: "Arthritis",
-      image: "/img/patient5.png",
       date: "November 2025",
     },
     {
@@ -245,7 +226,6 @@ export default function Home() {
       text: "I had low libido issues affecting my marriage. Dr. Patra's personalized treatment helped me regain my confidence. Thank you doctor!",
       rating: 5,
       treatment: "Sexual Health",
-      image: "/img/patient6.png",
       date: "October 2025",
     },
   ];
@@ -324,41 +304,6 @@ export default function Home() {
     { icon: <FaBookMedical />, count: 25, suffix: "+", label: "Research Papers" },
   ];
 
-  const team = [
-    {
-      name: "Dr. S. Patra",
-      role: "Founder & Chief Homeopath",
-      qualification: "DHMS (KOL)",
-      experience: "15+ Years",
-      expertise: "Sexual Health, Chronic Diseases",
-      image: "/dr1.png",
-    },
-    {
-      name: "Dr. M. Das",
-      role: "Senior Homeopath",
-      qualification: "BHMS",
-      experience: "10+ Years",
-      expertise: "Women's Health, Pediatrics",
-      image: "/img/doctor2.png",
-    },
-    {
-      name: "Dr. P. Ghosh",
-      role: "Consultant Homeopath",
-      qualification: "MD (Homeo)",
-      experience: "8+ Years",
-      expertise: "Skin & Hair, Allergy",
-      image: "/img/doctor3.png",
-    },
-    {
-      name: "Dr. S. Banerjee",
-      role: "Associate Homeopath",
-      qualification: "BHMS",
-      experience: "6+ Years",
-      expertise: "Gastro & Rectal",
-      image: "/img/doctor4.png",
-    },
-  ];
-
   const faqs = [
     {
       question: "Is homeopathy treatment safe?",
@@ -396,9 +341,6 @@ export default function Home() {
     { src: "/img/7.png", alt: "Treatment Room", category: "Interior" },
     { src: "/img/8.png", alt: "Staff with Patient", category: "Team" },
     { src: "/img/9.png", alt: "Clinic Building", category: "Exterior" },
-    { src: "/img/10.png", alt: "Medicine Preparation", category: "Process" },
-    { src: "/img/11.png", alt: "Award Ceremony", category: "Event" },
-    { src: "/img/12.png", alt: "Team Meeting", category: "Team" },
   ];
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -507,24 +449,22 @@ export default function Home() {
 
       {/* Floating Contact Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <motion.a
-          href="tel:09836121681"
+        <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
           onClick={handleCallClick}
+          className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
         >
           <FaPhone />
-        </motion.a>
-        <motion.a
-          href="#"
+        </motion.button>
+        <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
           onClick={handleWhatsAppClick}
+          className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
         >
           <FaWhatsapp />
-        </motion.a>
+        </motion.button>
       </div>
 
       {/* Decorative Blurs */}
@@ -676,23 +616,22 @@ export default function Home() {
                 variants={fadeInUp}
                 className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start"
               >
-                <motion.a
-                  href="tel:09836121681"
+                <motion.button
+                  onClick={handleCallClick}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:shadow-lg transition-all duration-300 text-center font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
                   <FaPhone className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Call Now
-                </motion.a>
-                <motion.a
-                  href="#"
+                </motion.button>
+                <motion.button
+                  onClick={handleWhatsAppClick}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={handleWhatsAppClick}
                   className="bg-green-500 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:shadow-lg transition-all duration-300 text-center font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
                   <FaWhatsapp className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> WhatsApp
-                </motion.a>
+                </motion.button>
                 <motion.a
                   href="#contact"
                   whileHover={{ scale: 1.02 }}
@@ -1072,8 +1011,6 @@ export default function Home() {
         </div>
       </section>
 
-      
-
       {/* Sexual Health Banner */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -1103,19 +1040,18 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col gap-3">
-                <a
-                  href="tel:09836121681"
+                <button
+                  onClick={handleCallClick}
                   className="bg-white text-rose-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all flex items-center gap-2"
                 >
                   <FaPhone /> Call for Consultation
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button
                   onClick={handleWhatsAppClick}
                   className="bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all flex items-center gap-2"
                 >
                   <FaWhatsapp /> WhatsApp Now
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>
@@ -1170,7 +1106,6 @@ export default function Home() {
                       animate={activeTreatment === idx ? { rotate: 360 } : {}}
                       transition={{ duration: 0.5 }}
                       className={`w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} bg-opacity-10 flex items-center justify-center text-xl`}
-                      style={{ color: category.color.split(' ')[1] }}
                     >
                       {category.icon}
                     </motion.div>
@@ -1810,14 +1745,14 @@ export default function Home() {
               </p>
               <div className="flex space-x-3">
                 {[FaPhone, FaWhatsapp, HiOutlineLocationMarker].map((Icon, idx) => (
-                  <motion.div
+                  <motion.button
                     key={idx}
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-teal-600 transition-all duration-300 cursor-pointer"
                     onClick={idx === 0 ? handleCallClick : idx === 1 ? handleWhatsAppClick : undefined}
                   >
                     <Icon className="text-sm" />
-                  </motion.div>
+                  </motion.button>
                 ))}
               </div>
             </div>
@@ -1882,7 +1817,7 @@ export default function Home() {
 
           <div className="border-t border-white/10 pt-6 text-center">
             <p className="text-gray-400 text-xs">
-              © 2026 German Homoeo Laboratory. All rights reserved. | Reg. No: 23368
+              © 2026 SAB Digitech Services. All rights reserved.
             </p>
             <p className="text-xs text-gray-500 mt-1">
               Your health is our priority. Heal naturally with homeopathy.

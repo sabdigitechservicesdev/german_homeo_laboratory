@@ -36,6 +36,9 @@ import {
   FaStarOfLife,
   FaRibbon,
   FaHandHoldingMedical,
+  FaUserMd as FaUserDoctor,
+  FaGraduationCap,
+  FaIdCard,
 } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import {
@@ -44,7 +47,7 @@ import {
   MdOutlineMedicalServices,
   MdOutlineChildCare,
 } from "react-icons/md";
-import { GiHealing, GiScales, GiSkullSignet, GiMedicines,  GiHealthNormal, GiYinYang } from "react-icons/gi";
+import { GiHealing, GiScales, GiSkullSignet, GiMedicines, GiHealthNormal, GiYinYang } from "react-icons/gi";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 
@@ -74,6 +77,7 @@ export default function Home() {
   const achievementsRef = useRef(null);
   const processRef = useRef(null);
   const faqRef = useRef(null);
+  const doctorsRef = useRef(null);
 
   const heroInView = useInView(heroRef, { once: true, amount: 0.3 });
   const aboutInView = useInView(aboutRef, { once: true, amount: 0.3 });
@@ -85,6 +89,7 @@ export default function Home() {
   const achievementsInView = useInView(achievementsRef, { once: true, amount: 0.3 });
   const processInView = useInView(processRef, { once: true, amount: 0.3 });
   const faqInView = useInView(faqRef, { once: true, amount: 0.1 });
+  const doctorsInView = useInView(doctorsRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -186,7 +191,7 @@ export default function Home() {
       text: "Dr. Patra treated my uterine fibroid without surgery. After 6 months of treatment, the fibroid size reduced significantly. Very grateful!",
       rating: 5,
       treatment: "Uterine Fibroid",
-      date: "March 2026",
+      date: "March 2025",
     },
     {
       name: "Mr. Subrata Ghosh",
@@ -194,7 +199,7 @@ export default function Home() {
       text: "Best homeopathy doctor in Howrah. My father's paralysis condition improved remarkably. Professional and caring approach.",
       rating: 5,
       treatment: "Paralysis",
-      date: "February 2026",
+      date: "February 2025",
     },
     {
       name: "Mr. Rajib Mondal",
@@ -202,7 +207,7 @@ export default function Home() {
       text: "I was suffering from premature ejaculation for 5 years. Dr. Patra's treatment was gentle and effective. Now I'm completely satisfied with the results.",
       rating: 5,
       treatment: "Sexual Disorder",
-      date: "January 2026",
+      date: "January 2025",
     },
     {
       name: "Mrs. Mousumi Pal",
@@ -289,7 +294,7 @@ export default function Home() {
       description: "Launched online consultation services and digital health records for better patient care.",
     },
     {
-      year: "2026",
+      year: "2025",
       title: "15 Years of Healing",
       description: "Completed 15 years of serving the community with over 50,000 happy patients.",
     },
@@ -302,6 +307,37 @@ export default function Home() {
     { icon: <GiMedicines />, count: 200, suffix: "+", label: "Remedies" },
     { icon: <FaClinicMedical />, count: 3, label: "Branches" },
     { icon: <FaBookMedical />, count: 25, suffix: "+", label: "Research Papers" },
+  ];
+
+  const doctors = [
+    {
+      name: "Dr. S. Patra",
+      qualification: "DHMS (KOL)",
+      registration: "",
+      expertise: "Founder & Chief Homeopath",
+      color: "from-teal-600 to-emerald-600",
+    },
+    {
+      name: "Dr. S. Mondal",
+      qualification: "BHMS (KOL)",
+      registration: "",
+      expertise: "Senior Homeopath",
+      color: "from-blue-600 to-indigo-600",
+    },
+    {
+      name: "Dr. J.K. Bhuniya",
+      qualification: "BHMS (CU)",
+      registration: "Reg No: 19727",
+      expertise: "Consultant Homeopath",
+      color: "from-purple-600 to-pink-600",
+    },
+    {
+      name: "Dr. R.K. Chalki",
+      qualification: "DHMS (CAL)",
+      registration: "",
+      expertise: "Associate Homeopath",
+      color: "from-amber-600 to-orange-600",
+    },
   ];
 
   const faqs = [
@@ -496,7 +532,7 @@ export default function Home() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {['Home', 'About', 'Treatments', 'Gallery', 'Contact'].map((item) => (
+            {['Home', 'About', 'Doctors', 'Treatments', 'Gallery', 'Contact'].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -536,7 +572,7 @@ export default function Home() {
               className="md:hidden bg-white/90 backdrop-blur-xl mt-4"
             >
               <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col space-y-4">
-                {['Home', 'About', 'Treatments', 'Gallery', 'Contact'].map((item) => (
+                {['Home', 'About', 'Doctors', 'Treatments', 'Gallery', 'Contact'].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -592,8 +628,8 @@ export default function Home() {
                 variants={fadeInUp}
                 className="mb-3 sm:mb-4"
               >
-                <p className="text-lg sm:text-xl text-gray-800 font-semibold">Dr. S. Patra</p>
-                <p className="text-sm sm:text-base text-gray-500">Leading Homeopath in Howrah Region</p>
+                <p className="text-lg sm:text-xl text-gray-800 font-semibold">Dr. S. Patra & Team</p>
+                <p className="text-sm sm:text-base text-gray-500">Leading Homeopaths in Howrah Region</p>
               </motion.div>
 
               <motion.p
@@ -801,7 +837,7 @@ export default function Home() {
               className="text-lg text-gray-600 max-w-3xl mx-auto"
             >
               Serving the community with authentic homeopathic care since 2008. 
-              Led by Dr. S. Patra, we've helped over 50,000 patients find natural healing.
+              Led by Dr. S. Patra & Team, we've helped over 50,000 patients find natural healing.
             </motion.p>
           </motion.div>
 
@@ -819,8 +855,8 @@ export default function Home() {
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 What started as a small clinic in Salap has now grown into a trusted healthcare institution 
-                with three branches serving Ranihati, Salap, and Dakshineswar. Our journey of 15+ years has 
-                been marked by thousands of successful treatments and countless grateful patients.
+                with multiple branches serving Ranihati, Salap, and Dakshineswar. Our team of experienced 
+                homeopaths work together to provide comprehensive care.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We specialize in treating chronic conditions including sexual disorders, female diseases, 
@@ -847,7 +883,7 @@ export default function Home() {
               </div>
               <div className="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/50 text-center">
                 <FaUserMd className="text-4xl text-teal-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-800">Expert Team</h4>
+                <h4 className="font-semibold text-gray-800">4+ Doctors</h4>
                 <p className="text-sm text-gray-600">Qualified Homeopaths</p>
               </div>
               <div className="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/50 text-center">
@@ -856,6 +892,65 @@ export default function Home() {
                 <p className="text-sm text-gray-600">No Side Effects</p>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Doctors Section */}
+      <section ref={doctorsRef} id="doctors" className="py-24 bg-gradient-to-b from-teal-50 to-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            variants={staggerChildren}
+            initial="hidden"
+            animate={doctorsInView ? "visible" : "hidden"}
+            className="text-center mb-16"
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+            >
+              Our <span className="text-teal-600">Expert Doctors</span>
+            </motion.h2>
+            <motion.div
+              variants={fadeInUp}
+              className="w-24 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"
+            />
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+            >
+              Experienced and qualified homeopathic practitioners dedicated to your wellness
+            </motion.p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {doctors.map((doctor, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                animate={doctorsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden border border-white/50"
+              >
+                <div className={`h-2 bg-gradient-to-r ${doctor.color}`} />
+                <div className="p-6 text-center">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-100 to-emerald-100 flex items-center justify-center">
+                    <FaUserDoctor className="text-3xl text-teal-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-1">{doctor.name}</h3>
+                  <p className="text-teal-600 font-medium text-sm mb-2">{doctor.qualification}</p>
+                  {doctor.registration && (
+                    <p className="text-xs text-gray-500 mb-2 flex items-center justify-center gap-1">
+                      <FaIdCard className="text-teal-500" /> {doctor.registration}
+                    </p>
+                  )}
+                  <p className="text-sm text-gray-600 bg-teal-50 rounded-full px-3 py-1 inline-block">
+                    {doctor.expertise}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -1569,11 +1664,11 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-6" />
             <p className="text-lg text-gray-600">
-              Visit us at any of our three convenient locations
+              Visit us at any of our convenient locations
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6">
             {/* Ranihati Branch */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -1584,9 +1679,9 @@ export default function Home() {
             >
               <div className="p-6 bg-gradient-to-r from-teal-600 to-emerald-600 text-white">
                 <h3 className="text-xl font-bold flex items-center gap-2">
-                  <FaMapMarkerAlt /> Ranihati & Salap Branch
+                  <FaMapMarkerAlt /> Ranihati Branch
                 </h3>
-                <p className="text-white/90 text-sm mt-1">Main Clinic • Open Everyday</p>
+                <p className="text-white/90 text-sm mt-1">Open Everyday</p>
               </div>
               
               <div className="p-6 space-y-4">
@@ -1597,8 +1692,8 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold text-gray-800 text-sm">Address</h4>
                     <p className="text-gray-600 text-sm">
-                      High Road Crossing, NH-6, Near Hayat Restaurant,
-                      <br />Salap, Howrah, West Bengal – 711409
+                      Ranihati, Howrah
+                      <br />West Bengal
                     </p>
                   </div>
                 </div>
@@ -1616,6 +1711,60 @@ export default function Home() {
                 <div className="h-[200px] rounded-xl overflow-hidden shadow-lg mt-2">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3684.3800898131767!2d88.15619017530025!3d22.56488327949736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDMzJzUzLjYiTiA4OMKwMDknMzEuNiJF!5e0!3m2!1sen!2sin!4v1771013027015!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                  ></iframe>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Salap Branch */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden"
+            >
+              <div className="p-6 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+                <h3 className="text-xl font-bold flex items-center gap-2">
+                  <FaMapMarkerAlt /> Salap Branch
+                </h3>
+                <p className="text-white/90 text-sm mt-1">Main Clinic • Open Everyday</p>
+              </div>
+              
+              <div className="p-6 space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 flex-shrink-0">
+                    <FaMapMarkerAlt />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 text-sm">Address</h4>
+                    <p className="text-gray-600 text-sm">
+                      High Road Crossing, NH-6, Near Hayat Restaurant,
+                      <br />Salap, Howrah, West Bengal – 711409
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 flex-shrink-0">
+                    <FaClock />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 text-sm">Timings</h4>
+                    <p className="text-gray-600 text-sm">Everyday, 10:00 AM - 7:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="h-[200px] rounded-xl overflow-hidden shadow-lg mt-2">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3683.0771994619395!2d88.26783897530171!3d22.613592179462508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDM2JzQ4LjkiTiA4OMKwMTYnMTMuNSJF!5e0!3m2!1sen!2sin!4v1771160750488!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -1760,7 +1909,7 @@ export default function Home() {
             <div>
               <h4 className="text-base font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                {["Home", "About", "Treatments", "Gallery", "Contact"].map((item) => (
+                {["Home", "About", "Doctors", "Treatments", "Gallery", "Contact"].map((item) => (
                   <motion.li key={item} whileHover={{ x: 5 }}>
                     <a
                       href={`#${item.toLowerCase()}`}
@@ -1780,8 +1929,15 @@ export default function Home() {
                 <li className="flex items-start gap-2 text-gray-400 text-sm">
                   <FaMapMarkerAlt className="text-teal-500 mt-1 flex-shrink-0" />
                   <span>
-                    <span className="font-semibold text-white">Ranihati & Salap:</span>
-                    <br />High Road Crossing, NH-6, Salap, Howrah
+                    <span className="font-semibold text-white">Ranihati:</span>
+                    <br />Ranihati, Howrah
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-gray-400 text-sm">
+                  <FaMapMarkerAlt className="text-emerald-500 mt-1 flex-shrink-0" />
+                  <span>
+                    <span className="font-semibold text-white">Salap:</span>
+                    <br />High Road Crossing, NH-6, Salap
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-gray-400 text-sm">
@@ -1817,7 +1973,7 @@ export default function Home() {
 
           <div className="border-t border-white/10 pt-6 text-center">
             <p className="text-gray-400 text-xs">
-              © 2026 SAB Digitech Services. All rights reserved.
+              © 2026 German Homoeo Laboratory. All rights reserved.
             </p>
             <p className="text-xs text-gray-500 mt-1">
               Your health is our priority. Heal naturally with homeopathy.

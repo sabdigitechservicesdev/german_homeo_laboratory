@@ -61,6 +61,9 @@ export default function Home() {
     name: "",
     phone: "",
     email: "",
+    date: "",
+    time: "",
+    branch: "",
     treatment: "",
     message: "",
   });
@@ -419,6 +422,9 @@ export default function Home() {
 *Name:* ${formData.name}%0A
 *Phone:* ${formData.phone}%0A
 *Email:* ${formData.email || 'Not provided'}%0A
+*Preferred Date:* ${formData.date}%0A
+*Preferred Time:* ${formData.time}%0A
+*Branch:* ${formData.branch}%0A
 *Treatment:* ${formData.treatment}%0A
 *Message:* ${formData.message || 'No message'}%0A%0A
 *Source:* Website Contact Form`;
@@ -428,7 +434,16 @@ export default function Home() {
     
     window.open(whatsappUrl, '_blank');
     
-    setFormData({ name: "", phone: "", email: "", treatment: "", message: "" });
+    setFormData({ 
+      name: "", 
+      phone: "", 
+      email: "", 
+      date: "", 
+      time: "", 
+      branch: "", 
+      treatment: "", 
+      message: "" 
+    });
   };
 
   const handleWhatsAppClick = () => {
@@ -1581,6 +1596,78 @@ export default function Home() {
                 transition={{ delay: 0.6 }}
               >
                 <label className="block text-gray-700 mb-2 font-medium text-sm">
+                  Preferred Date *
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                  min={new Date().toISOString().split('T')[0]}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 outline-none transition bg-white/50 backdrop-blur-sm"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+              >
+                <label className="block text-gray-700 mb-2 font-medium text-sm">
+                  Preferred Time *
+                </label>
+                <select
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 outline-none transition bg-white/50 backdrop-blur-sm"
+                >
+                  <option value="">Select time slot</option>
+                  <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                  <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                  <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
+                  <option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>
+                  <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
+                  <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
+                  <option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>
+                  <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>
+                </select>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 }}
+              >
+                <label className="block text-gray-700 mb-2 font-medium text-sm">
+                  Select Branch *
+                </label>
+                <select
+                  name="branch"
+                  value={formData.branch}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 outline-none transition bg-white/50 backdrop-blur-sm"
+                >
+                  <option value="">Select branch</option>
+                  <option value="Ranihati">Ranihati Branch</option>
+                  <option value="Salap">Salap Branch</option>
+                  <option value="Dakshineswar">Dakshineswar Branch</option>
+                </select>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.9 }}
+                className="md:col-span-2"
+              >
+                <label className="block text-gray-700 mb-2 font-medium text-sm">
                   Treatment Required *
                 </label>
                 <select
@@ -1610,11 +1697,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 1.0 }}
                 className="md:col-span-2"
               >
                 <label className="block text-gray-700 mb-2 font-medium text-sm">
-                  Message
+                  Message (Optional)
                 </label>
                 <textarea
                   name="message"
@@ -1630,7 +1717,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 1.1 }}
                 className="md:col-span-2 text-center"
               >
                 <motion.button

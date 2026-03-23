@@ -239,7 +239,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { icon: <FaUserMd />, value: 15, suffix: "+", label: "Years Experience" },
+    { icon: <FaUserMd />, value: 25, suffix: "+", label: "Years Experience" },
     { icon: <MdOutlineLocalHospital />, value: 50, suffix: "K+", label: "Patients Treated" },
     { icon: <FaLeaf />, value: 100, suffix: "%", label: "Natural Treatment" },
     { icon: <FaStar />, value: 4.9, suffix: "/5", label: "Patient Rating" },
@@ -298,15 +298,15 @@ export default function Home() {
     },
     {
       year: "2025",
-      title: "15 Years of Healing",
-      description: "Completed 15 years of serving the community with over 50,000 happy patients.",
+      title: "25 Years of Healing",
+      description: "Completed 25 years of serving the community with over 50,000 happy patients.",
     },
   ];
 
   const achievements = [
     { icon: <FaAward />, count: 8, label: "Medical Awards" },
     { icon: <FaUsers />, count: 50, suffix: "K+", label: "Happy Patients" },
-    { icon: <FaStar />, count: 15, label: "Years of Excellence" },
+    { icon: <FaStar />, count: 25, label: "Years of Excellence" },
     { icon: <GiMedicines />, count: 200, suffix: "+", label: "Remedies" },
     { icon: <FaClinicMedical />, count: 3, label: "Branches" },
     { icon: <FaBookMedical />, count: 25, suffix: "+", label: "Research Papers" },
@@ -362,7 +362,7 @@ export default function Home() {
     },
     {
       question: "What is your success rate?",
-      answer: "With over 50,000 patients treated in 15 years, we have a proven track record. Many chronic conditions show significant improvement with constitutional treatment.",
+      answer: "With over 50,000 patients treated in 25 years, we have a proven track record. Many chronic conditions show significant improvement with constitutional treatment.",
     },
     {
       question: "Do you provide medicines by post?",
@@ -628,7 +628,7 @@ export default function Home() {
                 className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-50 text-teal-600 rounded-full text-sm sm:text-base font-medium mb-4 sm:mb-5 border border-teal-100 mx-auto lg:mx-0"
               >
                 <FaShieldAlt className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1.5 sm:mr-2" />
-                Reg. No: 23368 • DHMS (KOL) • 15+ Years
+                Reg. No: 23368 • DHMS (KOL) • 25+ Years
               </motion.div>
 
               <motion.h1
@@ -760,7 +760,7 @@ export default function Home() {
                     transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
                     className="absolute top-2 sm:top-3 lg:top-4 right-2 sm:right-3 lg:right-4 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl p-1.5 sm:p-2 lg:p-3 shadow-lg border border-white/50"
                   >
-                    <p className="text-teal-600 font-bold text-xs sm:text-sm lg:text-lg">15+</p>
+                    <p className="text-teal-600 font-bold text-xs sm:text-sm lg:text-lg">25+</p>
                     <p className="text-gray-600 text-[8px] sm:text-[9px] lg:text-[10px] leading-tight">Years of<br />Excellence</p>
                   </motion.div>
 
@@ -2058,14 +2058,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-6 text-center">
-            <p className="text-gray-400 text-xs">
-              © 2026 German Homoeo Laboratory. All rights reserved.
-            </p>
-            <p className="text-xs text-gray-500 mt-1">
-              Your health is our priority. Heal naturally with homeopathy.
-            </p>
-          </div>
+<div className="border-t border-white/10 pt-6 text-center">
+  <p className="text-gray-400 text-xs">
+    © 2026  
+    <a 
+      href="https://www.sabdigitech.in/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="hover:text-white transition-colors duration-200"
+    >
+      . SAB Digitech Services
+    </a>
+    . All rights reserved.
+  </p>
+  <p className="text-xs text-gray-500 mt-1">
+    Your health is our priority. Heal naturally with homeopathy.
+  </p>
+</div>
         </div>
       </footer>
     </main>

@@ -239,7 +239,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { icon: <FaUserMd />, value: 25, suffix: "+", label: "Years Experience" },
+    { icon: <FaUserMd />, value: 35, suffix: "+", label: "Years Experience" },
     { icon: <MdOutlineLocalHospital />, value: 50, suffix: "K+", label: "Patients Treated" },
     { icon: <FaLeaf />, value: 100, suffix: "%", label: "Natural Treatment" },
     { icon: <FaStar />, value: 4.9, suffix: "/5", label: "Patient Rating" },
@@ -298,15 +298,15 @@ export default function Home() {
     },
     {
       year: "2025",
-      title: "25 Years of Healing",
-      description: "Completed 25 years of serving the community with over 50,000 happy patients.",
+      title: "35 Years of Healing",
+      description: "Completed 35 years of serving the community with over 50,000 happy patients.",
     },
   ];
 
   const achievements = [
     { icon: <FaAward />, count: 8, label: "Medical Awards" },
     { icon: <FaUsers />, count: 50, suffix: "K+", label: "Happy Patients" },
-    { icon: <FaStar />, count: 25, label: "Years of Excellence" },
+    { icon: <FaStar />, count: 35, label: "Years of Excellence" },
     { icon: <GiMedicines />, count: 200, suffix: "+", label: "Remedies" },
     { icon: <FaClinicMedical />, count: 3, label: "Branches" },
     { icon: <FaBookMedical />, count: 25, suffix: "+", label: "Research Papers" },
@@ -362,7 +362,7 @@ export default function Home() {
     },
     {
       question: "What is your success rate?",
-      answer: "With over 50,000 patients treated in 25 years, we have a proven track record. Many chronic conditions show significant improvement with constitutional treatment.",
+      answer: "With over 50,000 patients treated in 35 years, we have a proven track record. Many chronic conditions show significant improvement with constitutional treatment.",
     },
     {
       question: "Do you provide medicines by post?",
@@ -628,7 +628,7 @@ export default function Home() {
                 className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-50 text-teal-600 rounded-full text-sm sm:text-base font-medium mb-4 sm:mb-5 border border-teal-100 mx-auto lg:mx-0"
               >
                 <FaShieldAlt className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1.5 sm:mr-2" />
-                Reg. No: 23368 • DHMS (KOL) • 25+ Years
+                Reg. No: 23368 • DHMS (KOL) • 35+ Years
               </motion.div>
 
               <motion.h1
@@ -760,7 +760,7 @@ export default function Home() {
                     transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
                     className="absolute top-2 sm:top-3 lg:top-4 right-2 sm:right-3 lg:right-4 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl p-1.5 sm:p-2 lg:p-3 shadow-lg border border-white/50"
                   >
-                    <p className="text-teal-600 font-bold text-xs sm:text-sm lg:text-lg">25+</p>
+                    <p className="text-teal-600 font-bold text-xs sm:text-sm lg:text-lg">35+</p>
                     <p className="text-gray-600 text-[8px] sm:text-[9px] lg:text-[10px] leading-tight">Years of<br />Excellence</p>
                   </motion.div>
 
@@ -1903,9 +1903,12 @@ export default function Home() {
                   </div>
                 </div>
 
+
+                
+
                 <div className="h-[200px] rounded-xl overflow-hidden shadow-lg mt-2">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3681.992871988997!2d88.36084377530291!3d22.654054379433845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDM5JzE0LjYiTiA4OMKwMjEnNDguMyJF!5e0!3m2!1sen!2sin!4v1771013107055!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3681.97272301801!2d88.3636944!3d22.6548056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDM5JzE3LjMiTiA4OMKwMjEnNDkuMyJF!5e0!3m2!1sen!2sin!4v1776072878938!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
